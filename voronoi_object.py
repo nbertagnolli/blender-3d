@@ -3,6 +3,9 @@
 import bpy
 
 # Params
+# The name of the base object to edit. This is required.
+name = "Cube"
+
 # How fine to cut the surface, affects the size and number of Voronoi cells.
 subdivide_cuts = 2
 
@@ -65,7 +68,7 @@ bpy.ops.object.add_fracture_cell_objects(
 
 # Select and delete the original object.
 bpy.ops.object.select_all(action="DESELECT")
-bpy.data.objects["Cube"].select_set(True)
+bpy.data.objects[name].select_set(True)
 bpy.ops.object.delete(use_global=False)
 
 # Select all cuts and join them.  We need to set one of the
